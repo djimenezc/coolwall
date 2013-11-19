@@ -1,54 +1,54 @@
-angular.module('mean.articles').controller('ArticlesController', ['$scope', '$routeParams', '$location', 'Global', 'Articles', function ($scope, $routeParams, $location, Global, Articles) {
+angular.module('mean.ideas').controller('IdeasController', ['$scope', '$routeParams', '$location', 'Global', 'Ideas', function ($scope, $routeParams, $location, Global, Ideas) {
     $scope.global = Global;
 
     $scope.create = function() {
-        console.log("create article");
-        var article = new Articles({
+        console.log("create idea");
+        var idea = new Ideas({
             title: this.title,
             content: this.content
         });
-        article.$save(function(response) {
-            $location.path("articles/" + response._id);
+        idea.$save(function(response) {
+            $location.path("ideas/" + response._id);
         });
 
         this.title = "";
         this.content = "";
     };
 
-    $scope.remove = function(article) {
-        article.$remove();  
+    $scope.remove = function(idea) {
+        idea.$remove();  
 
-        for (var i in $scope.articles) {
-            if ($scope.articles[i] == article) {
-                $scope.articles.splice(i, 1);
+        for (var i in $scope.ideas) {
+            if ($scope.ideas[i] == idea) {
+                $scope.ideas.splice(i, 1);
             }
         }
     };
 
     $scope.update = function() {
-        console.log("update article");
-        var article = $scope.article;
-        if (!article.updated) {
-            article.updated = [];
+        console.log("update idea");
+        var idea = $scope.idea;
+        if (!idea.updated) {
+            idea.updated = [];
         }
-        article.updated.push(new Date().getTime());
+        idea.updated.push(new Date().getTime());
 
-        article.$update(function() {
-            $location.path('articles/' + article._id);
+        idea.$update(function() {
+            $location.path('ideas/' + idea._id);
         });
     };
 
     $scope.find = function() {
-        Articles.query(function(articles) {
-            $scope.articles = articles;
+        Ideas.query(function(ideas) {
+            $scope.ideas = ideas;
         });
     };
 
     $scope.findOne = function() {
-        Articles.get({
-            articleId: $routeParams.articleId
-        }, function(article) {
-            $scope.article = article;
+        Ideas.get({
+            ideaId: $routeParams.ideaId
+        }, function(idea) {
+            $scope.idea = idea;
         });
     };
 }]);
