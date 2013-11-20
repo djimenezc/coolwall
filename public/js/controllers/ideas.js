@@ -5,14 +5,14 @@ angular.module('coolwall.ideas').controller('IdeasController', ['$scope', '$rout
         console.log("create idea");
         var idea = new Ideas({
             title: this.title,
-            content: this.content
+            description: this.description
         });
         idea.$save(function(response) {
             $location.path("ideas/" + response._id);
         });
 
         this.title = "";
-        this.content = "";
+        this.description = "";
     };
 
     $scope.remove = function(idea) {

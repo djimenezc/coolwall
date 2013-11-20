@@ -30,7 +30,9 @@ var IdeaSchema = new Schema({
     },
     board_row : Number,
     board_column : Number,
-    is_on_board : {type: Boolean, default: false}
+    //is_on_board : {type: Boolean, default: false},
+    sort_order : Number
+
 });
 
 /**

@@ -41,8 +41,8 @@ exports.create = function(req, res) {
  * Update a idea
  */
 exports.update = function(req, res) {
-    console.log(req.idea);
-    console.log(req.body);
+  //  console.log(req.idea);
+  //  console.log(req.body);
 
     var idea = req.idea;
 
