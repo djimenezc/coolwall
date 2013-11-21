@@ -80,7 +80,7 @@ var User = mongoose.model('User');
                  email: 'admin@sap.com',
                  password: 'admin',
                  provider : 'local',
-                 isAdmin : true
+                 is_admin : true
                 };
 
     var adminUser = new User(oUser);
