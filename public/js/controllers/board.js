@@ -1,4 +1,6 @@
 angular.module('coolwall.board').controller('BoardController', ['$scope', 'Global', function($scope, Global) {
+    $scope.global = Global;
+
     $scope.cool = {
         proven: [
         {'name': 'GitHub',
