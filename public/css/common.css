@@ -57,6 +57,6 @@ footer p {
 }
 
 body{
-   min-width:300px; // suppose you want minimun width of 1000px
+   min-width:300px; // suppose you want minimun width of 300px
    _width: expression( document.body.clientWidth > 300 ? "300px" : "auto" ); /* sets max-width for IE */
 }

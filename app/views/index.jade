@@ -1,6 +1,14 @@
 extends layouts/default
 
 block content
-  section(data-ng-view)
-  script(type="text/javascript").
-    window.user = !{user};
+    .container
+      .row.row-offcanvas.row-offcanvas.row-offcanvas-right.row-offcanvas-right
+        #sidebar.col-xs-6.col-sm-3.sidebar-offcanvas(role='navigation', data-ng-controller="IndexController", ng-cloak="ng-cloak")
+          .list-group
+            div(data-ng-include="'views/articles/list.html'")
+            ul
+              li(data-ng-repeat='item in menu', data-ng-show='global.user', ui-route='/{{item.link}}', ng-class='{active: $uiRoute}')
+              a(href='#!/{{item.link}}') {{item.title}} 
+        .col-xs-12.col-sm-9(data-ng-view)
+    script(type="text/javascript").
+      window.user = !{user};

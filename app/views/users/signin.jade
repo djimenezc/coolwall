@@ -2,7 +2,7 @@ extends auth
 
 block auth
            
-      
+   
     form.form-signin.form-horizontal(action="/users/session", method="post")
       if (typeof message !== 'undefined' && message != "")
         p.error= message
