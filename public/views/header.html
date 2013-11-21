@@ -9,7 +9,8 @@
       </button>
       <a class="navbar-brand" href="#">Cool wall</a>
     </div>
-    <div class="collapse navbar-collapse">
+   
+    <div class="collapse navbar-collapse">       
       <ul class="nav navbar-nav navbar-right pull-right" data-ng-show="global.authenticated">
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{global.user.name}} <b class="caret"></b></a>
@@ -18,6 +19,7 @@
           </ul>
         </li>
       </ul>
+      <p class="navbar-text navbar-right " data-ng-show="global.user.is_admin">Admin</p>
     </div>
   </div>
 </div>
