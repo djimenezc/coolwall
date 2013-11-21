@@ -1,0 +1,102 @@
+<section data-ng-controller="BoardController">
+
+    <div class="container">
+        <div class="containerRow">
+            <h3>Cool</h3>
+            <div class="list" data-drop="true" ng-model="cool.proven" jqyoui-droppable="{multiple: true}">
+                <div class="dropArea">
+                    <h4>Proven</h4>
+                    <div editable-text="coolProven.name" class="item" ng-repeat="coolProven in cool.proven" id="{{coolProven.name}}" ng-model="cool.proven" data-drag="true"
+                         data-jqyoui-options="{revert: 'invalid'}" jqyoui-draggable="{index:{{$index}},animate:true}">
+                        {{coolProven.name}}
+                    </div>
+                </div>
+            </div>
+            <div class="list" data-drop="true" ng-model="cool.unproven" jqyoui-droppable="{multiple: true}">
+                <div class="dropArea">
+                    <h4>Unproven</h4>
+                    <div editable-text="coolUnproven.name" ng-repeat="coolUnproven in cool.unproven" class="item" id="{{coolUnproven.name}}" ng-model="cool.unproven"
+                         data-drag="true" data-jqyoui-options="{revert: 'invalid'}"
+                         jqyoui-draggable="{index:{{$index}},animate:true}">
+                        {{coolUnproven.name}}
+                    </div>
+                </div>
+            </div>
+            <div class="list" data-drop="true" ng-model="cool.somethingInBetween" jqyoui-droppable="{multiple: true}">
+                <div class="dropArea">
+                    <h4>Something in Between</h4>
+                    <div editable-text="coolMiddle.name" ng-repeat="coolMiddle in cool.somethingInBetween" class="item" id="{{coolMiddle.name}}" ng-model="cool.somethingInBetween"
+                         data-drag="true" data-jqyoui-options="{revert: 'invalid'}"
+                         jqyoui-draggable="{index:{{$index}},animate:true}">
+                        {{coolMiddle.name}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="containerRow">
+            <h3>Uncool</h3>
+            <div class="list" data-drop="true" ng-model="uncool.proven" jqyoui-droppable="{multiple: true}">
+                <div class="dropArea">
+                    <h4>Proven</h4>
+                    <div editable-text="uncoolProven.name" class="item" ng-repeat="uncoolProven in uncool.proven" id="{{uncoolProven.name}}" ng-model="uncool.proven" data-drag="true"
+                         data-jqyoui-options="{revert: 'invalid'}" jqyoui-draggable="{index:{{$index}},animate:true}">
+                        {{uncoolProven.name}}
+                    </div>
+                </div>
+            </div>
+            <div class="list" data-drop="true" ng-model="uncool.unproven" jqyoui-droppable="{multiple: true}">
+                <div class="dropArea">
+                    <h4>Unproven</h4>
+                    <div editable-text="uncoolUnproven.name" ng-repeat="uncoolUnproven in uncool.unproven" class="item" id="{{uncoolUnproven.name}}" ng-model="uncool.unproven"
+                         data-drag="true" data-jqyoui-options="{revert: 'invalid'}"
+                         jqyoui-draggable="{index:{{$index}},animate:true}">
+                        {{uncoolUnproven.name}}
+                    </div>
+                </div>
+            </div>
+            <div class="list" data-drop="true" ng-model="uncool.somethingInBetween" jqyoui-droppable="{multiple: true}">
+                <h4>Something in Between</h4>
+                <div class="dropArea">
+                    <div editable-text="uncoolMiddle.name" ng-repeat="uncoolMiddle in uncool.somethingInBetween" class="item" id="{{uncoolMiddle.name}}" ng-model="uncool.somethingInBetween"
+                         data-drag="true" data-jqyoui-options="{revert: 'invalid'}"
+                         jqyoui-draggable="{index:{{$index}},animate:true}">
+                        {{uncoolMiddle.name}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="containerRow">
+            <h3>SubZero</h3>
+            <div class="list" data-drop="true" ng-model="subZero.proven" jqyoui-droppable="{multiple: true}">
+                <div class="dropArea">
+                    <h4>Proven</h4>
+                    <div editable-text="subZeroProven.name" class="item" ng-repeat="subZeroProven in subZero.proven" id="{{subZeroProven.name}}" ng-model="subZero.proven" data-drag="true"
+                         data-jqyoui-options="{revert: 'invalid'}" jqyoui-draggable="{index:{{$index}},animate:true}">
+                        {{subZeroProven.name}}
+                    </div>
+                </div>
+            </div>
+            <div class="list" data-drop="true" ng-model="subZero.unproven" jqyoui-droppable="{multiple: true}">
+                <div class="dropArea">
+                    <h4>Unproven</h4>
+                    <div editable-text="subZeroUnproven.name" ng-repeat="subZeroUnproven in subZero.unproven" class="item" id="{{subZeroUnproven.name}}" ng-model="subZero.unproven"
+                         data-drag="true" data-jqyoui-options="{revert: 'invalid'}"
+                         jqyoui-draggable="{index:{{$index}},animate:true}">
+                        {{subZeroUnproven.name}}
+                    </div>
+                </div>
+            </div>
+            <div class="list" data-drop="true" ng-model="subZero.somethingInBetween" jqyoui-droppable="{multiple: true}">
+                <div class="dropArea">
+                    <h4>Something in Between</h4>
+                    <div editable-text="subZeroMiddle.name" ng-repeat="subZeroMiddle in subZero.somethingInBetween" class="item" id="{{subZeroMiddle.name}}" ng-model="subZero.somethingInBetween"
+                         data-drag="true" data-jqyoui-options="{revert: 'invalid'}"
+                         jqyoui-draggable="{index:{{$index}},animate:true}">
+                        {{subZeroMiddle.name}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
