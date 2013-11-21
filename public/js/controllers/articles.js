@@ -1,6 +1,9 @@
 angular.module('coolwall.articles').controller('ArticlesController', ['$scope', '$routeParams', '$location', 'Global', 'Articles', function ($scope, $routeParams, $location, Global, Articles) {
     $scope.global = Global;
 
+    // option for the accordion to close others when opening one
+    $scope.oneAtATime = true;
+    
     $scope.create = function() {
         console.log("create article");
         var article = new Articles({

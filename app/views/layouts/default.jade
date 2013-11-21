@@ -4,11 +4,16 @@ html(lang='en', xmlns='http://www.w3.org/1999/xhtml', xmlns:fb='https://www.face
   body
     .navbar.navbar-inverse.navbar-fixed-top(data-ng-include="'views/header.html'", data-role="navigation")
     section.content
-      section.container
-        #sidebar(data-ng-controller="IndexController")
-          ul
-            li(data-ng-repeat='item in menu', data-ng-show='global.user', ui-route='/{{item.link}}', ng-class='{active: $uiRoute}')
-              a(href='#!/{{item.link}}') {{item.title}}
+      section
         .jumbotron(style='margin-top:1em')
+
+          if (user)
+            #sidebar(data-ng-controller="IndexController" ng-cloak="ng-cloak")
+              div(data-ng-include="'views/articles/list.html'")
+
+              ul
+                li(data-ng-repeat='item in menu', data-ng-show='global.user', ui-route='/{{item.link}}', ng- class='{active: $uiRoute}')
+                  a(href='#!/{{item.link}}') {{item.title}}
+                  
           block content
     include ../includes/foot
