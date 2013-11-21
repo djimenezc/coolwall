@@ -8,7 +8,7 @@ block content
             div(data-ng-include="'views/articles/list.html'")
             ul
               li(data-ng-repeat='item in menu', data-ng-show='global.user', ui-route='/{{item.link}}', ng-class='{active: $uiRoute}')
-              a(href='#!/{{item.link}}') {{item.title}} 
+                a(href='#!/{{item.link}}') {{item.title}} 
         .col-xs-12.col-sm-9(data-ng-view)
     script(type="text/javascript").
       window.user = !{user};
