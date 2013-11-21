@@ -27,7 +27,7 @@ module.exports = function (grunt) {
             },
             js: {
                 files: ['public/js/**', 'app/**/*.js'],
-                tasks: ['jshint'],
+                tasks: ['jshint', 'test'],
                 options: {
                     livereload: true
                 }
@@ -43,7 +43,7 @@ module.exports = function (grunt) {
                 options: {
                     livereload: true
                 }
-            }
+            }            
         },
         jshint: {
             all: ['gruntfile.js', 'public/js/**/*.js', 'test/**/*.js', 'app/**/*.js'],
@@ -77,11 +77,20 @@ module.exports = function (grunt) {
             }
         },
         mochaTest: {
-            options: {
-                reporter: 'spec'
+            unit : {
+                options: {
+                    reporter: 'spec'
+                },
+                src: ['test/mocha/**/model.js']
             },
-            src: ['test/mocha/**/*.js']
-        },
+
+            rest : {
+                options: {
+                        reporter: 'spec'
+                },
+                src: ['test/mocha/**/rest.js']
+            }
+        },        
         karma: {
             unit: {
                 configFile: 'karma.conf.js',
@@ -157,9 +166,9 @@ module.exports = function (grunt) {
 			'removelogging' ]);
 
 	// Test task.
-	grunt.registerTask('test', [ 'env:test', 'mochaTest', 'karma' ]);
+	grunt.registerTask('test', [ 'env:test', 'mochaTest:unit','mochaTest:rest', 'karma' ]);
 	grunt.registerTask('integration-test', [ 'env:integration_test',
-			'protractor' ]);
+			 'protractor' ]);
 
 	// Uglify task.
 	grunt.registerTask('minify', 'uglify');
