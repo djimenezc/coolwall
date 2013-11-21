@@ -9,5 +9,6 @@ html(lang='en', xmlns='http://www.w3.org/1999/xhtml', xmlns:fb='https://www.face
           ul
             li(data-ng-repeat='item in menu', data-ng-show='global.user', ui-route='/{{item.link}}', ng-class='{active: $uiRoute}')
               a(href='#!/{{item.link}}') {{item.title}}
-        block content
+        .jumbotron(style='margin-top:1em')
+          block content
     include ../includes/foot
