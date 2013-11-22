@@ -11,6 +11,11 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
+	  'public/lib/jquery/jquery.min.js',
+	  'public/lib/jquery-ui/ui/minified/jquery-ui.min.js',
+	  'public/lib/jquery-ui/ui/minified/jquery.ui.draggable.min.js',
+	  'public/lib/jquery-ui/ui/minified/jquery.ui.droppable.min.js',
+	  'public/lib/jqueryui-touch-punch/jquery.ui.touch-punch.min.js',      
       'public/lib/angular/angular.js',
       'public/lib/angular-mocks/angular-mocks.js',
       'public/lib/angular-cookies/angular-cookies.js',
@@ -19,6 +24,10 @@ module.exports = function(config) {
       'public/lib/angular-bootstrap/ui-bootstrap-tpls.js',
       'public/lib/angular-bootstrap/ui-bootstrap.js',
       'public/lib/angular-ui-utils/modules/route/route.js',
+      'public/lib/angular-dragdrop/src/angular-dragdrop.min.js',
+      'public/lib/angular-dragdrop/src/angular-dragdrop.min.js',
+      'public/lib/angular-xeditable/dist/js/xeditable.min.js',
+      
 //      'public/lib/jquery/jquery.js',
       'public/js/*.js',
       'public/js/**/*.js',
