@@ -55,10 +55,19 @@ footer p {
     margin: 0 auto;
 }
 
-.authBox{
+body {
+	
     min-width:300px; // suppose you want minimun width of 300px
     _width: expression( document.body.clientWidth > 300 ? "300px" : "auto" ); /* sets max-width for IE */
+}
+.authBox{
 /*    max-width: 300px; */
+	max-width: 450px;
+	padding: 15px;
+	margin: 0 auto;
+}
+
+.form-signin {
 }
 
 .dropArea {
