@@ -15,11 +15,11 @@ window.app.config(['$routeProvider',
             templateUrl: 'views/articles/view.html'
         }).
         when('/', {
-            templateUrl: 'views/index.html'
-        }).
-        when('/dashboard', {
             templateUrl: 'views/board.html'
         }).
+        /*when('/dashboard', {
+            templateUrl: 'views/board.html'
+        }).*/
         otherwise({
             redirectTo: '/'
         });

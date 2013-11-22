@@ -50,14 +50,17 @@ footer p {
   border-radius: 10px;
 }
 
-
 .col-centered{
     float: none;
     margin: 0 auto;
 }
 
 .authBox{
-   min-width:300px; // suppose you want minimun width of 300px
-   _width: expression( document.body.clientWidth > 300 ? "300px" : "auto" ); /* sets max-width for IE */
+    min-width:300px; // suppose you want minimun width of 300px
+    _width: expression( document.body.clientWidth > 300 ? "300px" : "auto" ); /* sets max-width for IE */
 /*    max-width: 300px; */
+}
+
+.dropArea {
+    min-height: 120px;
 }

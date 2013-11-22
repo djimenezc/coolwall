@@ -4,9 +4,5 @@ angular.module('coolwall.system').controller('IndexController', ['$scope', 'Glob
     $scope.menu = [{
         'title': 'Create New Article',
         'link': 'articles/create'
-    }, {
-        'title': 'View Board',
-        'link': 'dashboard'
     }];
-
 }]);

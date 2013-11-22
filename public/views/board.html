@@ -1,59 +1,66 @@
 <section data-ng-controller="BoardController">
 
-     <div id="content">
+    <div id="content">
         <div id="content-header">
             <div class="row">
-                <div class="col-md-4"><h3>Cool</h3></div>
-                <div class="col-md-4"><h3>Uncool</h3></div>
-                <div class="col-md-4"><h3>SubZero</h3></div>
+                <div class="col-xs-6 col-sm-4"><h3>Cool</h3></div>
+                <div class="col-xs-6 col-sm-4"><h3>Uncool</h3></div>
+                <div class="col-xs-6 col-sm-4"><h3>SubZero</h3></div>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-4" data-drop="true" ng-model="cool.proven" jqyoui-droppable="{multiple: true}">
+            <div class="col-xs-6 col-sm-4" data-drop="true" ng-model="cool.proven" jqyoui-droppable="{multiple: true}">
                 <div class="dropArea">
                     <h4 class="text-success">Proven</h4>
+
                     <div ng-show="global.user.is_admin">
-                        <div class="col-md-12" editable-text="coolProven.name" ng-repeat="coolProven in cool.proven" id="{{coolProven.name}}" ng-model="cool.proven" data-drag="true"
+                        <div style="border-bottom: none" editable-text="coolProven.name" ng-repeat="coolProven in cool.proven"
+                             id="{{coolProven.name}}" ng-model="cool.proven" data-drag="true"
                              data-jqyoui-options="{revert: 'invalid'}" jqyoui-draggable="{index:{{$index}}}">
                             <h5>{{coolProven.name}}</h5>
                         </div>
                     </div>
                     <div ng-hide="global.user.is_admin">
-                        <div class="col-md-12" ng-repeat="coolProven in cool.proven" ng-model="cool.proven">
+                        <div ng-repeat="coolProven in cool.proven" ng-model="cool.proven">
                             <h5>{{coolProven.name}}</h5>
                         </div>
                     </div>
 
                 </div>
             </div>
-            <div class="col-md-4" data-drop="true" ng-model="uncool.proven" jqyoui-droppable="{multiple: true}">
+            <div class="col-xs-6 col-sm-4" data-drop="true" ng-model="uncool.proven" jqyoui-droppable="{multiple: true}">
                 <div class="dropArea">
                     <h4 class="text-success">Proven</h4>
+
                     <div ng-show="global.user.is_admin">
-                        <div editable-text="uncoolProven.name" class="col-md-12" ng-repeat="uncoolProven in uncool.proven" id="{{uncoolProven.name}}" ng-model="uncool.proven" data-drag="true"
+                        <div style="border-bottom: none" editable-text="uncoolProven.name"
+                             ng-repeat="uncoolProven in uncool.proven" id="{{uncoolProven.name}}"
+                             ng-model="uncool.proven" data-drag="true"
                              data-jqyoui-options="{revert: 'invalid'}" jqyoui-draggable="{index:{{$index}}}">
                             <h5>{{uncoolProven.name}}</h5>
                         </div>
                     </div>
                     <div ng-hide="global.user.is_admin">
-                        <div class="col-md-12" ng-repeat="uncoolProven in uncool.proven" ng-model="uncool.proven">
+                        <div ng-repeat="uncoolProven in uncool.proven" ng-model="uncool.proven">
                             <h5>{{uncoolProven.name}}</h5>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-4" data-drop="true" ng-model="subZero.proven" jqyoui-droppable="{multiple: true}">
+            <div class="col-xs-6 col-sm-4" data-drop="true" ng-model="subZero.proven" jqyoui-droppable="{multiple: true}">
                 <div class="dropArea">
                     <h4 class="text-success">Proven</h4>
                     <div ng-show="global.user.is_admin">
-                        <div editable-text="subZeroProven.name" class="col-md-12" ng-repeat="subZeroProven in subZero.proven" id="{{subZeroProven.name}}" ng-model="subZero.proven" data-drag="true"
+                        <div style="border-bottom: none" editable-text="subZeroProven.name"
+                             ng-repeat="subZeroProven in subZero.proven" id="{{subZeroProven.name}}"
+                             ng-model="subZero.proven" data-drag="true"
                              data-jqyoui-options="{revert: 'invalid'}" jqyoui-draggable="{index:{{$index}}}">
                             <h5>{{subZeroProven.name}}</h5>
                         </div>
                     </div>
                     <div ng-hide="global.user.is_admin">
-                        <div class="col-md-12" ng-repeat="subZeroProven in subZero.proven" ng-model="subZero.proven">
+                        <div ng-repeat="subZeroProven in subZero.proven" ng-model="subZero.proven">
                             <h5>{{subZeroProven.name}}</h5>
                         </div>
                     </div>
@@ -61,52 +68,62 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-4" data-drop="true" ng-model="cool.somethingInBetween" jqyoui-droppable="{multiple: true}">
+            <div class="col-xs-6 col-sm-4" data-drop="true" ng-model="cool.somethingInBetween"
+                 jqyoui-droppable="{multiple: true}">
                 <div class="dropArea">
                     <h4 class="text-info">Something in Between</h4>
                     <div ng-show="global.user.is_admin">
-                        <div class="col-md-12" editable-text="coolMiddle.name" ng-repeat="coolMiddle in cool.somethingInBetween" id="{{coolMiddle.name}}" ng-model="cool.somethingInBetween"
+                        <div style="border-bottom: none" editable-text="coolMiddle.name"
+                             ng-repeat="coolMiddle in cool.somethingInBetween" id="{{coolMiddle.name}}"
+                             ng-model="cool.somethingInBetween"
                              data-drag="true" data-jqyoui-options="{revert: 'invalid'}"
                              jqyoui-draggable="{index:{{$index}}}">
                             <h5>{{coolMiddle.name}}</h5>
                         </div>
                     </div>
                     <div ng-hide="global.user.is_admin">
-                        <div class="col-md-12" ng-repeat="coolMiddle in cool.somethingInBetween" ng-model="cool.somethingInBetween">
+                        <div ng-repeat="coolMiddle in cool.somethingInBetween"
+                             ng-model="cool.somethingInBetween">
                             <h5>{{coolMiddle.name}}</h5>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4" data-drop="true" ng-model="uncool.somethingInBetween" jqyoui-droppable="{multiple: true}">
-                <h4 class="text-info">Something in Between</h4>
+            <div class="col-xs-6 col-sm-4" data-drop="true" ng-model="uncool.somethingInBetween"
+                 jqyoui-droppable="{multiple: true}">
                 <div class="dropArea">
+                    <h4 class="text-info">Something in Between</h4>
                     <div ng-show="global.user.is_admin">
-                        <div editable-text="uncoolMiddle.name" ng-repeat="uncoolMiddle in uncool.somethingInBetween" class="col-md-12" id="{{uncoolMiddle.name}}" ng-model="uncool.somethingInBetween"
+                        <div style="border-bottom: none" editable-text="uncoolMiddle.name" ng-repeat="uncoolMiddle in uncool.somethingInBetween"
+                             id="{{uncoolMiddle.name}}" ng-model="uncool.somethingInBetween"
                              data-drag="true" data-jqyoui-options="{revert: 'invalid'}"
                              jqyoui-draggable="{index:{{$index}}}">
                             <h5> {{uncoolMiddle.name}}</h5>
                         </div>
                     </div>
                     <div ng-hide="global.user.is_admin">
-                        <div ng-repeat="uncoolMiddle in uncool.somethingInBetween" class="col-md-12" ng-model="uncool.somethingInBetween">
+                        <div ng-repeat="uncoolMiddle in uncool.somethingInBetween"
+                             ng-model="uncool.somethingInBetween">
                             <h5> {{uncoolMiddle.name}}</h5>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4" data-drop="true" ng-model="subZero.somethingInBetween" jqyoui-droppable="{multiple: true}">
+            <div class="col-xs-6 col-sm-4" data-drop="true" ng-model="subZero.somethingInBetween"
+                 jqyoui-droppable="{multiple: true}">
                 <div class="dropArea">
                     <h4 class="text-info">Something in Between</h4>
                     <div ng-show="global.user.is_admin">
-                        <div editable-text="subZeroMiddle.name" ng-repeat="subZeroMiddle in subZero.somethingInBetween" class="col-md-12" id="{{subZeroMiddle.name}}" ng-model="subZero.somethingInBetween"
+                        <div style="border-bottom: none" editable-text="subZeroMiddle.name" ng-repeat="subZeroMiddle in subZero.somethingInBetween"
+                             id="{{subZeroMiddle.name}}" ng-model="subZero.somethingInBetween"
                              data-drag="true" data-jqyoui-options="{revert: 'invalid'}"
                              jqyoui-draggable="{index:{{$index}}}">
                             <h5>{{subZeroMiddle.name}}</h5>
                         </div>
                     </div>
                     <div ng-hide="global.user.is_admin">
-                        <div ng-repeat="subZeroMiddle in subZero.somethingInBetween" class="col-md-12" ng-model="subZero.somethingInBetween">
+                        <div ng-repeat="subZeroMiddle in subZero.somethingInBetween"
+                             ng-model="subZero.somethingInBetween">
                             <h5>{{subZeroMiddle.name}}</h5>
                         </div>
                     </div>
@@ -114,52 +131,56 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-4" data-drop="true" ng-model="cool.unproven" jqyoui-droppable="{multiple: true}">
-                <div class="dropArea">
-                    <h4 class="text-danger">Unproven</h4>
-                    <div ng-show="global.user.is_admin">
-                        <div editable-text="coolUnproven.name" ng-repeat="coolUnproven in cool.unproven" class="col-md-12" id="{{coolUnproven.name}}" ng-model="cool.unproven"
+            <div class="col-xs-6 col-sm-4" data-drop="true" ng-model="cool.unproven" jqyoui-droppable="{multiple: true}">
+               <div class="dropArea">
+                   <h4 class="text-danger">Unproven</h4>
+                   <div ng-show="global.user.is_admin">
+                        <div style="border-bottom: none" editable-text="coolUnproven.name" ng-repeat="coolUnproven in cool.unproven"
+                             id="{{coolUnproven.name}}" ng-model="cool.unproven"
                              data-drag="true" data-jqyoui-options="{revert: 'invalid'}"
                              jqyoui-draggable="{index:{{$index}}}">
                             <h5>{{coolUnproven.name}}</h5>
                         </div>
                     </div>
                     <div ng-hide="global.user.is_admin">
-                        <div ng-repeat="coolUnproven in cool.unproven" class="col-md-12" ng-model="cool.unproven">
+                        <div ng-repeat="coolUnproven in cool.unproven" ng-model="cool.unproven">
                             <h5>{{coolUnproven.name}}</h5>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4" data-drop="true" ng-model="uncool.unproven" jqyoui-droppable="{multiple: true}">
+            <div class="col-xs-6 col-sm-4" data-drop="true" ng-model="uncool.unproven" jqyoui-droppable="{multiple: true}">
                 <div class="dropArea">
                     <h4 class="text-danger">Unproven</h4>
                     <div ng-show="global.user.is_admin">
-                        <div editable-text="uncoolUnproven.name" ng-repeat="uncoolUnproven in uncool.unproven" class="col-md-12" id="{{uncoolUnproven.name}}" ng-model="uncool.unproven"
+                        <div style="border-bottom: none" editable-text="uncoolUnproven.name" ng-repeat="uncoolUnproven in uncool.unproven"
+                             id="{{uncoolUnproven.name}}" ng-model="uncool.unproven"
                              data-drag="true" data-jqyoui-options="{revert: 'invalid'}"
                              jqyoui-draggable="{index:{{$index}}}">
                             <h5>{{uncoolUnproven.name}}</h5>
                         </div>
                     </div>
                     <div ng-hide="global.user.is_admin">
-                        <div ng-repeat="uncoolUnproven in uncool.unproven" class="col-md-12" ng-model="uncool.unproven">
+                        <div ng-repeat="uncoolUnproven in uncool.unproven" ng-model="uncool.unproven">
                             <h5>{{uncoolUnproven.name}}</h5>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4" data-drop="true" ng-model="subZero.unproven" jqyoui-droppable="{multiple: true}">
+            <div class="col-xs-6 col-sm-4" data-drop="true" ng-model="subZero.unproven" jqyoui-droppable="{multiple: true}">
                 <div class="dropArea">
                     <h4 class="text-danger">Unproven</h4>
                     <div ng-show="global.user.is_admin">
-                        <div editable-text="subZeroUnproven.name" ng-repeat="subZeroUnproven in subZero.unproven" class="col-md-12" id="{{subZeroUnproven.name}}" ng-model="subZero.unproven"
+                        <div style="border-bottom: none" editable-text="subZeroUnproven.name" ng-repeat="subZeroUnproven in subZero.unproven"
+                             id="{{subZeroUnproven.name}}" ng-model="subZero.unproven"
                              data-drag="true" data-jqyoui-options="{revert: 'invalid'}"
                              jqyoui-draggable="{index:{{$index}}}">
                             <h5>{{subZeroUnproven.name}}</h5>
                         </div>
                     </div>
                     <div ng-hide="global.user.is_admin">
-                        <div ng-repeat="subZeroUnproven in subZero.unproven" class="col-md-12" ng-model="subZero.unproven">
+                        <div ng-repeat="subZeroUnproven in subZero.unproven"
+                             ng-model="subZero.unproven">
                             <h5>{{subZeroUnproven.name}}</h5>
                         </div>
                     </div>
@@ -167,5 +188,9 @@
             </div>
         </div>
     </div>
-
-</div>
+<script type="text/javascript">
+    $('.item').css({
+        'border-bottom': none
+    });
+</script>
+</section>
