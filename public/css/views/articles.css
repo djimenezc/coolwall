@@ -3,5 +3,12 @@ h1 {
 }
 
 ul.articles li:not(:last-child) {
-    border-bottom:1px solid #ccc
+/*     border-bottom:1px solid #ccc */
+}
+ul.articles > li {
+	 list-style-type: none;
+}
+
+.articles {
+	padding-left: 1em;
 }
