@@ -200,6 +200,7 @@
 
 .boardContainer {
 	
-	background: none repeat scroll 0 0 #eceaf3;
+	background-image: linear-gradient(to bottom, #f5f5f5 0%, #e8e8e8 100%);
+	background-repeat: repeat-x;
 	border-radius: 5px;
 }
