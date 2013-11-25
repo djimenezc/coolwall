@@ -1,0 +1,11 @@
+<div class="panel panel-default">
+  <div class="panel-heading" style="position:relative;">
+    <h4 class="panel-title">
+      <a href="" class="accordion-toggle" ng-click="isOpen = !isOpen" accordion-plus-transclude="heading">{{heading}}</a>
+    </h4>
+    <button style="position:absolute;right:.6em;top:.7em;" type="button" class="btn btn-default btn-xs" ng-click="goLink()"><span class="glyphicon glyphicon-plus" ></span></button>
+  </div>
+  <div class="panel-collapse" collapse="!isOpen">
+    <div class="panel-body" ng-transclude></div>
+  </div>
+</div>

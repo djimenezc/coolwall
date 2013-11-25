@@ -1,9 +1,9 @@
 <section data-ng-controller="ArticlesController" data-ng-init="find()">
   <accordion close-others="oneAtATime">
-    <accordion-group is-open="true" is-btn="true">
-      <accordion-heading>
+    <accordion-group-plus is-open="true" btn-link="home#!/articles/create">
+      <accordion-heading-plus>
         <span >Ideas</span>
-      </accordion-heading>
+      </accordion-heading-plus>
       <ul class="articles unstyled">
         <li data-ng-repeat="article in articles">
           <h3><a data-ng-href="#!/articles/{{article._id}}">{{article.title}}</a></h3>
@@ -12,7 +12,7 @@
           <h2>No article yet. <br> Why don't you <a href="/#!/articles/create">Create One</a>?</h2>
         </li>
       </ul>
-    </accordion-group>
+    </accordion-group-plus>
     <accordion-group>
       <accordion-heading>
         <span >Tip of the day</span>
