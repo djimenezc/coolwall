@@ -6,4 +6,4 @@ app.run(function(editableOptions) {
 angular.module('coolwall.system', []);
 angular.module('coolwall.articles', []);
 angular.module('coolwall.ideas', []);
-angular.module('coolwall.board', []);
+angular.module('coolwall.board', ['coolwall.ideas']);

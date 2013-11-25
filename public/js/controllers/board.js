@@ -1,31 +1,26 @@
-angular.module('coolwall.board').controller('BoardController', ['$scope', 'Global', function($scope, Global) {
+angular.module('coolwall.board').controller('BoardController', ['$scope', 'Global', 'IdeaService', function($scope, Global, IdeaService) {
     $scope.global = Global;
 
-    $scope.cool = {
-        proven: [
-        {'name': 'GitHub',
-            'snippet': 'Version Control'},
-        {'name': 'AngularJS',
-            'snippet': 'JavaScript MVC framework'},
-        {'name': 'Grunt',
-            'snippet': 'JavaScript Task Runner'},
-        {'name': 'Bower',
-            'snippet': 'Package Manager'}
-        ],
-        unproven: [],
-        somethingInBetween: []
+    $scope.ideas = IdeaService.getIdeas();
+
+    $scope.oDraggedModel = null;
+
+    $scope.dropCallback = function(event, ui, column, row) {
+        var oModel = $scope.oDraggedModel;
+
+        //assign new position
+        oModel.board_row = row;
+        oModel.board_column = column;
+
+        console.log('drag ' + oModel.title + 'to column ' + column + ' row ' + row);
+        //update backend
+        IdeaService.update(oModel);
+
     };
 
-    $scope.uncool = {
-        proven: [],
-        unproven: [],
-        somethingInBetween: []
+    $scope.dragStartCallback = function(event, ui, item) {
+        $scope.oDraggedModel = item;
     };
 
-    $scope.subZero = {
-        proven: [],
-        unproven: [],
-        somethingInBetween: []
-    };
 
 }]);

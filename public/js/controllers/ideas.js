@@ -1,6 +1,7 @@
 angular.module('coolwall.ideas').controller('IdeasController', ['$scope', '$routeParams', '$location', 'Global', 'Ideas', function ($scope, $routeParams, $location, Global, Ideas) {
     $scope.global = Global;
 
+
     $scope.create = function() {
         console.log("create idea");
         var idea = new Ideas({
