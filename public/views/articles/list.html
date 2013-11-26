@@ -1,27 +1,40 @@
-<section data-ng-controller="ArticlesController" data-ng-init="find()">
-  <accordion close-others="oneAtATime">
-    <accordion-group-plus is-open="true" btn-link="home#!/articles/create">
-      <accordion-heading-plus>
-        <span >Ideas</span>
-      </accordion-heading-plus>
-      <ul class="articles unstyled">
-        <li data-ng-repeat="article in articles">
-          <h3><a data-ng-href="#!/articles/{{article._id}}">{{article.title}}</a></h3>
-        </li>
-        <li data-ng-hide="!articles || articles.length">
-          <h2>No article yet. <br> Why don't you <a href="/#!/articles/create">Create One</a>?</h2>
-        </li>
-      </ul>
-    </accordion-group-plus>
-    <accordion-group>
-      <accordion-heading>
-        <span >Tip of the day</span>
-      </accordion-heading>
-    </accordion-group>
-    <accordion-group>
-      <accordion-heading>
-        <span >Tell me more</span>
-      </accordion-heading>
-    </accordion-group>
-  </accordion>
+<section data-ng-controller="BoardController as controller">
+    <!-- data-ng-init="find()" -->
+    <accordion close-others="oneAtATime">
+        <accordion-group-plus id="wishlist" is-open="true" btn-link="home#!/articles/create">
+            <accordion-heading-plus>
+                <span>Ideas</span>
+            </accordion-heading-plus>
+            <div data-drop="true" ng-model="wishlist" jqyoui-droppable="{multiple: true}">
+                <div class="dropArea">
+                    <div ng-show="global.user.is_admin">
+                        <div style="border-bottom: none" editable-text="wish.title" ng-repeat="wish in wishlist"
+                             id="{{wish.title}}" ng-model="wishlist" data-drag="true"
+                             data-jqyoui-options="{revert: 'invalid'}"
+                             jqyoui-draggable="{index:{{$index}},  onStart : 'controller.dragStartCallback(wish)'}">
+                            <h5>{{wish.title}}</h5>
+                        </div>
+                        <div ng-hide="!wishlist || wishlist.length">
+                            <h2>No ideas yet! <br> Why don't you <a href="home#!/articles/create">create one</a>?</h2>
+                        </div>
+                    </div>
+                    <div ng-hide="global.user.is_admin">
+                        <div ng-repeat="wish in wishlist" ng-model="wishlist">
+                            <h5>{{wish.title}}</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </accordion-group-plus>
+        <accordion-group>
+            <accordion-heading>
+                <span>Tip of the day</span>
+            </accordion-heading>
+        </accordion-group>
+        <accordion-group>
+            <accordion-heading>
+                <span>Tell me more</span>
+            </accordion-heading>
+        </accordion-group>
+    </accordion>
 </section>
