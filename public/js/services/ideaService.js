@@ -16,9 +16,7 @@ angular.module('coolwall.ideas').service('IdeaService', function( $location, Ide
          }
          idea.updated.push(new Date().getTime());
 
-         idea.$update(function() {
-             $location.path('ideas/' + idea._id);
-         });
+         idea.$update();
     };
 	
 

@@ -1,7 +1,11 @@
 angular.module('coolwall.board').controller('BoardController', ['$scope', 'Global', 'IdeaService', function($scope, Global, IdeaService) {
     $scope.global = Global;
+    $scope.ideas = [];
 
-    $scope.ideas = IdeaService.getIdeas();
+
+    $scope.onInit = function () {
+            $scope.ideas = IdeaService.getIdeas();
+    };
 
     $scope.oDraggedModel = null;
 
@@ -22,5 +26,9 @@ angular.module('coolwall.board').controller('BoardController', ['$scope', 'Globa
         $scope.oDraggedModel = item;
     };
 
+    $scope.updateIdeaTitle = function(idea) {
+
+        IdeaService.update(idea);
+    };
 
 }]);
