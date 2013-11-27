@@ -23,8 +23,6 @@ angular.module('coolwall.ideas').service('IdeaService', function ($location, Ide
          idea.$remove();
     };
 
-
-    // $scope.global = Global;
     this.create = function (title) {
         var idea = new Ideas({
             title: title,
