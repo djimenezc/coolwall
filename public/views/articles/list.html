@@ -1,26 +1,22 @@
 <section data-ng-controller="BoardController as controller">
-    <!-- data-ng-init="find()" -->
     <accordion close-others="oneAtATime">
         <accordion-group-plus id="wishlist" is-open="true" btn-link="home#!/articles/create">
             <accordion-heading-plus>
                 <span>Ideas</span>
             </accordion-heading-plus>
-            <div data-drop="true" ng-model="wishlist" jqyoui-droppable="{multiple: true}">
+            <div data-drop="true" ng-model="ideas" jqyoui-droppable="{multiple: true, onDrop : 'controller.dropCallback(99,99)'}">
                 <div class="dropArea">
                     <div ng-show="global.user.is_admin">
-                        <div style="border-bottom: none" editable-text="wish.title" ng-repeat="wish in wishlist"
-                             id="{{wish.title}}" ng-model="wishlist" data-drag="true"
+                        <div style="border-bottom: none" editable-text="idea.title" ng-repeat="idea in global.ideas | filter:{board_column:99, board_row:99}"
+                             id="{{idea.title}}" ng-model="global.ideas" data-drag="true"
                              data-jqyoui-options="{revert: 'invalid'}"
-                             jqyoui-draggable="{index:{{$index}},  onStart : 'controller.dragStartCallback(wish)'}">
-                            <h5>{{wish.title}}</h5>
-                        </div>
-                        <div ng-hide="!wishlist || wishlist.length">
-                            <h2>No ideas yet! <br> Why don't you <a href="home#!/articles/create">create one</a>?</h2>
+                             jqyoui-draggable="{index:{{$index}},  onStart : 'dragStartCallback(idea)'}">
+                            <h5>{{idea.title}}</h5>
                         </div>
                     </div>
                     <div ng-hide="global.user.is_admin">
-                        <div ng-repeat="wish in wishlist" ng-model="wishlist">
-                            <h5>{{wish.title}}</h5>
+                        <div ng-repeat="idea in global.ideas | filter:{board_column: 99, board_row: 99}" ng-model="global.ideas">
+                            <h5>{{idea.title}}</h5>
                         </div>
                     </div>
                 </div>

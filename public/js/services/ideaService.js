@@ -1,40 +1,37 @@
-angular.module('coolwall.ideas').service('IdeaService', function( $location, Ideas ) {
+angular.module('coolwall.ideas').service('IdeaService', function ($location, Ideas) {
 
-	
 
-	this.getIdeas = function() {
-		 return Ideas.query(function(ideas) {
+    this.getIdeas = function () {
+        console.log("getideas");
+        return Ideas.query(function (ideas) {
             this.allideas = ideas;
         });
-	}
+    };
 
-    this.update = function(idea) {
-         console.log("update idea");
+    this.update = function (idea) {
+        console.log("update idea");
 
-         if (!idea.updated) {
-             idea.updated = [];
-         }
-         idea.updated.push(new Date().getTime());
+        if (!idea.updated) {
+            idea.updated = [];
+        }
+        idea.updated.push(new Date().getTime());
 
          idea.$update();
     };
-	
 
-    // $scope.global = Global;
+    this.create = function (title) {
+        var idea = new Ideas({
+            title: title,
+            board_row: 99,
+            board_column: 99
+        });
+        idea.$save(function (response) {
+            $location.path("ideas/" + response._id);
+            console.log(response._id);
+        });
 
-    // $scope.create = function() {
-    //     console.log("create idea");
-    //     var idea = new Ideas({
-    //         title: this.title,
-    //         description: this.description
-    //     });
-    //     idea.$save(function(response) {
-    //         $location.path("ideas/" + response._id);
-    //     });
 
-    //     this.title = "";
-    //     this.description = "";
-    // };
+    };
 
     // $scope.remove = function(idea) {
     //     idea.$remove();  
@@ -45,7 +42,6 @@ angular.module('coolwall.ideas').service('IdeaService', function( $location, Ide
     //         }
     //     }
     // };
-
 
 
     // $scope.find = function() {

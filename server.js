@@ -87,7 +87,7 @@ var User = mongoose.model('User');
     adminUser.save(function(err) {
         if (err) {
             console.log('failed to create Admin user');
-            return;;
+            return;
         }
         console.log('Admin user created');
     });
