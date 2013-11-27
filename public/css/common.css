@@ -59,7 +59,7 @@ footer p {
 }
 
 .idea-list-item {
-  cursor: move;
+  cursor: hand;
   padding: 5px 10px;
   border: 0;
 }

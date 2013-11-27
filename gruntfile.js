@@ -19,30 +19,30 @@ module.exports = function(grunt) {
             }
         },
         watch: {
+            options: {
+                livereload: true
+            },
             jade: {
                 files: ['app/views/**'],
-                options: {
-                    livereload: true
-                }
+
             },
             js: {
                 files: ['public/js/**', 'app/**/*.js'],
-                // tasks: ['jshint', 'test'],
-                options: {
-                    livereload: true
-                }
+                tasks: ['jshint'],
             },
             html: {
-                files: ['public/views/**'],
+                files: ['public/views/**']
+            },
+            sass: {
                 options: {
-                    livereload: true
-                }
+                    livereload: false
+                },
+                files: ['public/css/*.scss'],
+                tasks: ['sass']
             },
             css: {
-                files: ['public/css/**'],
-                options: {
-                    livereload: true
-                }
+                files: ['public/css/*.css'],
+                tasks: []
             }
         },
         jshint: {
