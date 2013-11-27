@@ -17,7 +17,7 @@ angular.module('coolwall.board').controller('BoardController', ['$scope', 'Globa
         oModel.board_row = row;
         oModel.board_column = column;
 
-        console.log('drag ' + oModel.title + 'to column ' + column + ' row ' + row);
+     //   console.log('drag ' + oModel.title + 'to column ' + column + ' row ' + row);
         //update backend
         IdeaService.update(oModel);
 
@@ -30,6 +30,18 @@ angular.module('coolwall.board').controller('BoardController', ['$scope', 'Globa
     $scope.updateIdeaTitle = function (idea) {
 
         IdeaService.update(idea);
+    };
+
+    $scope.dropTrashCallback = function(event, ui) {
+        var oModel = $scope.global.oDraggedModel;
+
+        IdeaService.remove(oModel);
+
+         for (var i in $scope.ideas) {
+             if ($scope.ideas[i] == oModel) {
+                 $scope.ideas.splice(i, 1);
+             }
+         }
     };
 
     $scope.createIdea = function () {
