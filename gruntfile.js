@@ -27,7 +27,7 @@ module.exports = function (grunt) {
             },
             js: {
                 files: ['public/js/**', 'app/**/*.js'],
-                tasks: ['jshint', 'test'],
+               // tasks: ['jshint', 'test'],
                 options: {
                     livereload: true
                 }
@@ -76,6 +76,7 @@ module.exports = function (grunt) {
                 logConcurrentOutput: true
             }
         },
+
         mochaTest: {
             unit : {
                 options: {
@@ -162,8 +163,7 @@ module.exports = function (grunt) {
 	grunt.option('force', true);
 
 	// Default task(s). Executed when you're simply running 'grunt'
-	grunt.registerTask('default', [ 'sassit', 'jshint', 'uglify',
-			'removelogging' ]);
+	grunt.registerTask('default', [ 'jshint', 'uglify',	'removelogging' ]);
 
 	// Test task.
 	grunt.registerTask('test', [ 'env:test', 'mochaTest:unit','mochaTest:rest', 'karma' ]);

@@ -18,7 +18,11 @@ angular.module('coolwall.ideas').service('IdeaService', function( $location, Ide
 
          idea.$update();
     };
-	
+
+    this.remove = function(idea) {
+         idea.$remove();
+    };
+
 
     // $scope.global = Global;
 
@@ -36,15 +40,6 @@ angular.module('coolwall.ideas').service('IdeaService', function( $location, Ide
     //     this.description = "";
     // };
 
-    // $scope.remove = function(idea) {
-    //     idea.$remove();  
-
-    //     for (var i in $scope.ideas) {
-    //         if ($scope.ideas[i] == idea) {
-    //             $scope.ideas.splice(i, 1);
-    //         }
-    //     }
-    // };
 
 
 

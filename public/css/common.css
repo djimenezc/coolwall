@@ -49,3 +49,11 @@ footer p {
   -o-border-radius: 10px;
   border-radius: 10px;
 }
+
+.dropArea {
+  min-height: 120px;
+}
+
+.trash {
+  top: 20px;
+}
