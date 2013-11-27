@@ -7,7 +7,7 @@
             <div data-drop="true" ng-model="ideas" jqyoui-droppable="{multiple: true, onDrop : 'controller.dropCallback(99,99)'}">
                 <div class="dropArea">
                     <div ng-show="global.user.is_admin">
-                        <div style="border-bottom: none" editable-text="idea.title" ng-repeat="idea in global.ideas | filter:{board_column:99, board_row:99}"
+                        <div class="idea-list-item" editable-text="idea.title" ng-repeat="idea in global.ideas | filter:{board_column:99, board_row:99}"
                              id="{{idea.title}}" ng-model="global.ideas" data-drag="true"
                              data-jqyoui-options="{revert: 'invalid'}"
                              jqyoui-draggable="{index:{{$index}},  onStart : 'dragStartCallback(idea)'}">

@@ -1,4 +1,4 @@
-module.exports = function (grunt) {
+module.exports = function(grunt) {
     // Project Configuration
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -27,7 +27,7 @@ module.exports = function (grunt) {
             },
             js: {
                 files: ['public/js/**', 'app/**/*.js'],
-               // tasks: ['jshint', 'test'],
+                // tasks: ['jshint', 'test'],
                 options: {
                     livereload: true
                 }
@@ -43,7 +43,7 @@ module.exports = function (grunt) {
                 options: {
                     livereload: true
                 }
-            }            
+            }
         },
         jshint: {
             all: ['gruntfile.js', 'public/js/**/*.js', 'test/**/*.js', 'app/**/*.js'],
@@ -78,20 +78,20 @@ module.exports = function (grunt) {
         },
 
         mochaTest: {
-            unit : {
+            unit: {
                 options: {
                     reporter: 'spec'
                 },
                 src: ['test/mocha/**/model.js']
             },
 
-            rest : {
+            rest: {
                 options: {
-                        reporter: 'spec'
+                    reporter: 'spec'
                 },
                 src: ['test/mocha/**/rest.js']
             }
-        },        
+        },
         karma: {
             unit: {
                 configFile: 'karma.conf.js',
@@ -100,8 +100,8 @@ module.exports = function (grunt) {
             }
         },
 
-        protractor : {
-            options : {
+        protractor: {
+            options: {
                 configFile: "node_modules/protractor/referenceConf.js", // Default
                 // config
                 // file
@@ -111,74 +111,74 @@ module.exports = function (grunt) {
                     // Arguments passed to the command
                 }
             },
-            your_target : {
-                configFile : "config/e2e.conf.js", // Target-specific
+            your_target: {
+                configFile: "config/e2e.conf.js", // Target-specific
                 // config file
-                options : {
-                    args : {}
+                options: {
+                    args: {}
                     // Target-specific arguments
                 }
             },
         },
-        env : {
-            test : {
-                NODE_ENV : 'test'
+        env: {
+            test: {
+                NODE_ENV: 'test'
             },
-            integration_test : {
-                NODE_ENV : 'integration_test'
+            integration_test: {
+                NODE_ENV: 'integration_test'
             },
-            dev : {
-                NODE_ENV : 'development'
+            dev: {
+                NODE_ENV: 'development'
             }
         },
-        sass : { // Task
-            dist : { // Target
-                options : { // Target options
-                    style : 'expanded'
+        sass: { // Task
+            dist: { // Target
+                options: { // Target options
+                    style: 'expanded'
                 },
-                files : { // Dictionary of files
-                    'public/css/common.css' : 'public/css/common.scss' // 'destination':
+                files: { // Dictionary of files
+                    'public/css/common.css': 'public/css/common.scss' // 'destination':
                     // 'source'
                 }
             }
         }
     });
 
-	// Load NPM tasks
-	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.loadNpmTasks('grunt-remove-logging');
+    // Load NPM tasks
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-remove-logging');
 
-	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-contrib-jshint');
-	grunt.loadNpmTasks('grunt-mocha-test');
-	grunt.loadNpmTasks('grunt-karma');
-	grunt.loadNpmTasks('grunt-protractor-runner');
-	grunt.loadNpmTasks('grunt-nodemon');
-	grunt.loadNpmTasks('grunt-concurrent');
-	grunt.loadNpmTasks('grunt-env');
+    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-mocha-test');
+    grunt.loadNpmTasks('grunt-karma');
+    grunt.loadNpmTasks('grunt-protractor-runner');
+    grunt.loadNpmTasks('grunt-nodemon');
+    grunt.loadNpmTasks('grunt-concurrent');
+    grunt.loadNpmTasks('grunt-env');
 
-	grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-contrib-sass');
 
-	// Making grunt default to force in order not to break the project.
-	grunt.option('force', true);
+    // Making grunt default to force in order not to break the project.
+    grunt.option('force', true);
 
-	// Default task(s). Executed when you're simply running 'grunt'
-	grunt.registerTask('default', [ 'jshint', 'sass', 'uglify',	'removelogging' ]);
+    // Default task(s). Executed when you're simply running 'grunt'
+    grunt.registerTask('default', ['jshint', 'sass', 'uglify', 'removelogging']);
 
-	// Test task.
-	grunt.registerTask('test', [ 'env:test', 'mochaTest:unit','mochaTest:rest', 'karma' ]);
-	grunt.registerTask('integration-test', [ 'env:integration_test',
-			 'protractor' ]);
+    // Test task.
+    grunt.registerTask('test', ['env:test', 'mochaTest:unit', 'mochaTest:rest', 'karma']);
+    grunt.registerTask('integration-test', ['env:integration_test',
+             'protractor']);
 
-	// Uglify task.
-	grunt.registerTask('minify', 'uglify');
+    // Uglify task.
+    grunt.registerTask('minify', 'uglify');
 
-	// Remove logging.
-	grunt.registerTask('remove-logging', 'removelogging');
+    // Remove logging.
+    grunt.registerTask('remove-logging', 'removelogging');
 
-	// Start server
-	grunt.registerTask('server', 'env:dev', 'concurrent');
+    // Start server
+    grunt.registerTask('server', 'env:dev', 'concurrent');
 
-	// run sass
-	grunt.registerTask('sassit', 'sass');
+    // run sass
+    grunt.registerTask('sassit', 'sass');
 };

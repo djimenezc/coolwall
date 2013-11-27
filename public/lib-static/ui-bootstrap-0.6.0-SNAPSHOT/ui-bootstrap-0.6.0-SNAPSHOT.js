@@ -121,8 +121,10 @@ angular.module('ui.bootstrap.collapse', ['ui.bootstrap.transition'])
                     if (!isCollapsed) {
                         if (initialAnimSkip) {
                             fixUpHeight(scope, element, element[0].scrollHeight + 'px');
+                            element.css('overflow', 'hidden');
                         } else {
                             fixUpHeight(scope, element, 'auto');
+                            element.css('overflow', 'visible');
                         }
                     }
                 }
@@ -160,6 +162,7 @@ angular.module('ui.bootstrap.collapse', ['ui.bootstrap.transition'])
                     initialAnimSkip = false;
                     if (!isCollapsed) {
                         fixUpHeight(scope, element, 'auto');
+                        element.css('overflow', 'visible');
                     }
                 } else {
                     doTransition({
@@ -170,6 +173,7 @@ angular.module('ui.bootstrap.collapse', ['ui.bootstrap.transition'])
                         // the group while the animation was still running
                         if (!isCollapsed) {
                             fixUpHeight(scope, element, 'auto');
+                            element.css('overflow', 'visible');
                         }
                     });
                 }
@@ -186,6 +190,7 @@ angular.module('ui.bootstrap.collapse', ['ui.bootstrap.transition'])
                     doTransition({
                         'height': '0'
                     });
+                    element.css('overflow', 'hidden');
                 }
             };
         }

@@ -71,3 +71,21 @@ footer {
 .trash {
   top:20px;
 }
+
+.idea-list-item {
+  cursor: move;
+  padding: 5px 10px;
+  border: 0;
+}
+.idea-list-item:active {
+  border: 1px black dashed;
+}
+.panel-body {
+  padding: 5px;
+}
+.inside-panel {
+  padding: 5px 10px;
+}
+.list-group .panel-group .panel {
+  overflow: visible;
+}
