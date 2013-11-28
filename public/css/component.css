@@ -173,22 +173,30 @@
 
 /* General styles for all menus */
 .cw-spmenu {
-  background: #47a3da;
+  background: #fff;
   position: fixed;
 }
 
 .cw-spmenu h3 {
-  color: #afdefa;
-  font-size: 1.9em;
-  padding: 20px;
+  color: #fff;
+  font-size: 13px;
   margin: 0;
-  font-weight: 300;
-  background: #0d77b6;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: 'Lato', Arial, sans-serif;
+  font-weight: bold;
+  float: left
+}
+
+.cw-spmenu span {
+  float: right;
+  top: -5px;
+  position: relative;
 }
 
 .cw-spmenu a {
   display: block;
-  color: #fff;
+  color: #000;
   font-size: 1.1em;
   font-weight: 300;
 }
@@ -212,7 +220,7 @@
 }
 
 .cw-spmenu-vertical a {
-  border-bottom: 1px solid #258ecd;
+  border-bottom: 1px solid #D4D4D4;
   padding: 1em;
 }
 
@@ -241,6 +249,7 @@
 
 .cw-spmenu-left {
   left: -240px;
+  box-shadow: 0 0 5px black;
 }
 
 .cw-spmenu-right {
@@ -296,6 +305,20 @@
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   transition: all 0.3s ease;
+}
+
+.cw-spmenu-entry-div {
+  background: #3B95C6;
+  padding: 23px;
+  height:60px;
+}
+
+.cw-spmenu-anchor-h3 {
+  font-size: 14px !important;
+  display: inline-block !important;
+  border: 0 !important;
+  padding: 0 !important;
+  color: white !important;
 }
 
 /* Example media queries */
