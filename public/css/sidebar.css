@@ -89,7 +89,7 @@
   display: block;
   float: left;
   position: relative;
-  width: 220px;
+  /*width: 220px;*/
   z-index: 16;
 }
 #sidebar > ul > li.active > a {

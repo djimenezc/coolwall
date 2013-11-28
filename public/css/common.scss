@@ -90,3 +90,36 @@ footer {
 .list-group .panel-group .panel {
   overflow: visible;
 }
+.nav .open > a,
+.nav .open > a:hover,
+.nav .open > a:focus {
+  background-color: #fff;
+  color: #345472;
+  border-color: #fff;
+}
+.navbar {
+  position: relative;
+  border: 0px;
+}
+.dropdown-toggle {
+  padding: 0 30px;
+  font-size: 13px;
+  font-weight: bold;
+}
+.dropdown-caret-down {
+  padding: 0 0 0 5px;
+  position: relative;
+  top: 5px;
+}
+.cw-dropdown-menu {
+  right: 0;
+  position: relative;
+  border-radius: 0px;
+  border: 0px;
+  width: 100% !important;
+  min-width: 100% !important
+}
+.cw-dropdown-menu-anchor {
+  background: white;
+  color: #345472;
+}

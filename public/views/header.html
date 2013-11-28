@@ -1,25 +1,21 @@
-<div class="navbar navbar-fixed-top navbar-inverse" role="navigation" data-ng-controller="HeaderController">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#!/">Cool wall</a>
-    </div>
-   
-    <div class="collapse navbar-collapse">       
+<div class="navbar navbar-top navbar" role="navigation" data-ng-controller="HeaderController">
+  <ul id="cw-menu" class="cw-menu-main">
+    <li class="cw-trigger"><a id="showLeftPush" class="cw-icon cw-icon-menu"><span>Menu</span></a></li>
+    <li><a href="#/!">Cool Wall</a></li>
+    <li>
       <ul class="nav navbar-nav navbar-right pull-right" data-ng-show="global.authenticated">
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{global.user.name}} <b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li><a href="/signout">Signout</a></li>
-          </ul>
+          <div data-ng-show="global.authenticated">
+            <a href="#" class="dropdown-toggle cw-dropdown-toggle" data-toggle="dropdown">
+              {{global.user.name}} 
+              <i class="fa fa-caret-down fa-2x dropdown-caret-down"></i>
+            </a>
+            <ul class="dropdown-menu cw-dropdown-menu">
+              <li><a href="/signout" class="cw-dropdown-menu-anchor">Signout</a></li>
+            </ul>
+          </div>
         </li>
       </ul>
-      <!--<p class="navbar-text navbar-right " data-ng-show="global.user.is_admin">Admin</p>-->
-    </div>
-  </div>
+    </li>
+  </ul>
 </div>
