@@ -37,9 +37,9 @@ angular.module('coolwall.board').controller('BoardController', ['$scope', 'Globa
 
         IdeaService.remove(oModel);
 
-         for (var i in $scope.ideas) {
-             if ($scope.ideas[i] == oModel) {
-                 $scope.ideas.splice(i, 1);
+         for (var i in $scope.global.ideas) {
+             if ($scope.global.ideas[i] == oModel) {
+                 $scope.global.ideas.splice(i, 1);
              }
          }
     };

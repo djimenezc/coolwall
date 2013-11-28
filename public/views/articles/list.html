@@ -1,36 +1,129 @@
-<section data-ng-controller="BoardController as controller">
-    <accordion close-others="oneAtATime">
-        <accordion-group-plus id="wishlist" is-open="true" btn-link="home#!/articles/create">
-            <accordion-heading-plus>
-                <span>Ideas</span>
-            </accordion-heading-plus>
-            <div data-drop="true" ng-model="ideas" jqyoui-droppable="{multiple: true, onDrop : 'controller.dropCallback(99,99)'}">
-                <div class="dropArea">
-                    <div ng-show="global.user.is_admin">
-                        <div class="idea-list-item" editable-text="idea.title" ng-repeat="idea in global.ideas | filter:{board_column:99, board_row:99}"
-                             id="{{idea.title}}" ng-model="global.ideas" data-drag="true"
-                             data-jqyoui-options="{revert: 'invalid'}"
-                             jqyoui-draggable="{index:{{$index}},  onStart : 'dragStartCallback(idea)'}">
-                            <h5>{{idea.title}}</h5>
-                        </div>
-                    </div>
-                    <div ng-hide="global.user.is_admin">
-                        <div ng-repeat="idea in global.ideas | filter:{board_column: 99, board_row: 99}" ng-model="global.ideas">
-                            <h5>{{idea.title}}</h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </accordion-group-plus>
-        <accordion-group>
-            <accordion-heading>
-                <span>Tip of the day...</span>
-            </accordion-heading>
-        </accordion-group>
-        <accordion-group>
-            <accordion-heading>
-                <span>Tell me more...</span>
-            </accordion-heading>
-        </accordion-group>
-    </accordion>
-</section>
+<!--<section data-ng-controller="BoardController as controller">-->
+    <!--<div class="panel panel-default">-->
+        <!--<div class="panel-heading">-->
+            <!--<h3 class="panel-title">Idea</h3>-->
+
+            <!--<div ng-controller="ModalDemoCtrl">-->
+                <!--<script type="text/ng-template" id="createIdeaModal.html">-->
+                    <!--<div class="modal-header">-->
+                        <!--<h3>Create a new idea!</h3>-->
+                    <!--</div>-->
+                    <!--<div class="modal-body">-->
+                        <!--<form role="form">-->
+                            <!--<div class="form-group">-->
+                                <!--<label for="ideaTitle">Title</label>-->
+                                <!--<input type="text" class="form-control" id="ideaTitle" ng-model="ideaTitle" placeholder="Enter title">-->
+                            <!--</div>-->
+                            <!--<div class="form-group">-->
+                                <!--<label for="ideaDescription">Description</label>-->
+                                <!--<input type="text" class="form-control" id="ideaDescription" placeholder="Enter Description">-->
+                            <!--</div>-->
+                            <!--&lt;!&ndash;<button type="submit" class="btn btn-default">Submit</button>&ndash;&gt;-->
+                            <!--<button class="btn btn-primary" ng-click="ok()">OK</button>-->
+                            <!--<button class="btn btn-warning" ng-click="cancel()">Cancel</button>-->
+                        <!--</form>-->
+                    <!--</div>-->
+                    <!--<div class="modal-footer">-->
+                        <!--&lt;!&ndash;<button class="btn btn-primary" ng-click="ok()">OK</button>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<button class="btn btn-warning" ng-click="cancel()">Cancel</button>&ndash;&gt;-->
+                    <!--</div>-->
+                <!--</script>-->
+                <!--<button style="position:absolute;right:2em;top:.7em;" type="button" ng-click="open(controller)" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-plus"></span></button>-->
+                <!--&lt;!&ndash;<button class="btn" ng-click="open()">Open me!</button>&ndash;&gt;-->
+                <!--&lt;!&ndash;<div ng-show="selected">Selection from a modal: {{ selected }}</div>&ndash;&gt;-->
+            <!--</div>-->
+
+        <!--</div>-->
+        <!--<div class="panel-body">-->
+            <!--<div data-drop="true" ng-model="ideas" jqyoui-droppable="{multiple: true, onDrop : 'controller.dropCallback(99,99)'}">-->
+                <!--<div class="dropArea">-->
+                    <!--<div ng-show="global.user.is_admin">-->
+                        <!--<div class="idea-list-item" editable-text="idea.title" ng-repeat="idea in global.ideas | filter:{board_column:99, board_row:99}"-->
+                             <!--id="{{idea.title}}" ng-model="global.ideas" data-drag="true"-->
+                             <!--data-jqyoui-options="{revert: 'invalid'}"-->
+                             <!--jqyoui-draggable="{index:{{$index}},  onStart : 'dragStartCallback(idea)'}">-->
+                            <!--<h5>{{idea.title}}</h5>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div ng-hide="global.user.is_admin">-->
+                        <!--<div ng-repeat="idea in global.ideas | filter:{board_column: 99, board_row: 99}" ng-model="global.ideas">-->
+                            <!--<h5>{{idea.title}}</h5>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="panel panel-default">-->
+        <!--<div class="panel-heading">-->
+            <!--<h3 class="panel-title">Tip of the day...</h3>-->
+        <!--</div>-->
+        <!--<div class="panel-body">-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="panel panel-default">-->
+        <!--<div class="panel-heading">-->
+            <!--<h3 class="panel-title">Tell me more...</h3>-->
+        <!--</div>-->
+        <!--<div class="panel-body">-->
+        <!--</div>-->
+    <!--</div>-->
+
+    <!--&lt;!&ndash;<div ng-controller="ModalDemoCtrl">&ndash;&gt;-->
+        <!--&lt;!&ndash;<script type="text/ng-template" id="createIdeaModal.html">&ndash;&gt;-->
+            <!--&lt;!&ndash;<div class="modal-header">&ndash;&gt;-->
+                <!--&lt;!&ndash;<h3>I'm a modal!</h3>&ndash;&gt;-->
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+            <!--&lt;!&ndash;<div class="modal-body">&ndash;&gt;-->
+                <!--&lt;!&ndash;<ul>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<li ng-repeat="item in items">&ndash;&gt;-->
+                        <!--&lt;!&ndash;<a ng-click="selected.item = item">{{ item }}</a>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</li>&ndash;&gt;-->
+                <!--&lt;!&ndash;</ul>&ndash;&gt;-->
+                <!--&lt;!&ndash;Selected: <b>{{ selected.item }}</b>&ndash;&gt;-->
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+            <!--&lt;!&ndash;<div class="modal-footer">&ndash;&gt;-->
+                <!--&lt;!&ndash;<button class="btn btn-primary" ng-click="ok()">OK</button>&ndash;&gt;-->
+                <!--&lt;!&ndash;<button class="btn btn-warning" ng-click="cancel()">Cancel</button>&ndash;&gt;-->
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+        <!--&lt;!&ndash;</script>&ndash;&gt;-->
+
+        <!--&lt;!&ndash;<button class="btn" ng-click="open()">Open me!</button>&ndash;&gt;-->
+        <!--&lt;!&ndash;<div ng-show="selected">Selection from a modal: {{ selected }}</div>&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+    <!--&lt;!&ndash; <accordion close-others="oneAtATime">-->
+        <!--<accordion-group-plus id="wishlist" is-open="true" btn-link="home#!/articles/create">-->
+            <!--<accordion-heading-plus>-->
+                <!--<span>Ideas</span>-->
+            <!--</accordion-heading-plus>-->
+            <!--<div data-drop="true" ng-model="ideas" jqyoui-droppable="{multiple: true, onDrop : 'controller.dropCallback(99,99)'}">-->
+                <!--<div class="dropArea">-->
+                    <!--<div ng-show="global.user.is_admin">-->
+                        <!--<div class="idea-list-item" editable-text="idea.title" ng-repeat="idea in global.ideas | filter:{board_column:99, board_row:99}"-->
+                             <!--id="{{idea.title}}" ng-model="global.ideas" data-drag="true"-->
+                             <!--data-jqyoui-options="{revert: 'invalid'}"-->
+                             <!--jqyoui-draggable="{index:{{$index}},  onStart : 'dragStartCallback(idea)'}">-->
+                            <!--<h5>{{idea.title}}</h5>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div ng-hide="global.user.is_admin">-->
+                        <!--<div ng-repeat="idea in global.ideas | filter:{board_column: 99, board_row: 99}" ng-model="global.ideas">-->
+                            <!--<h5>{{idea.title}}</h5>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</accordion-group-plus>-->
+        <!--<accordion-group>-->
+            <!--<accordion-heading>-->
+                <!--<span>Tip of the day...</span>-->
+            <!--</accordion-heading>-->
+        <!--</accordion-group>-->
+        <!--<accordion-group>-->
+            <!--<accordion-heading>-->
+                <!--<span>Tell me more...</span>-->
+            <!--</accordion-heading>-->
+        <!--</accordion-group>-->
+    <!--</accordion>&ndash;&gt;-->
+<!--</section>-->

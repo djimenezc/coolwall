@@ -1,31 +1,67 @@
-<nav class="cw-spmenu cw-spmenu-vertical cw-spmenu-left" id="cw-spmenu-s1">
-  <div class="cw-spmenu-entry-div">
-    <h3>Ideas</h3>
+<nav ng-controller="BoardController as controller" class="cw-spmenu cw-spmenu-vertical cw-spmenu-left" id="cw-spmenu-s1">
+    <div class="cw-spmenu-entry-div">
+        <h3>Ideas</h3>
+    <span>
+        <div ng-controller="ModalDemoCtrl">
+            <script type="text/ng-template" id="createIdeaModal.html">
+                <div class="modal-header">
+                    <h3>Create a new idea!</h3>
+                </div>
+                <div class="modal-body">
+                    <form role="form">
+                        <div class="form-group">
+                            <label for="ideaTitle">Title</label>
+                            <input type="text" class="form-control" id="ideaTitle" ng-model="ideaTitle"
+                                   placeholder="Enter title">
+                        </div>
+                        <div class="form-group">
+                            <label for="ideaDescription">Description</label>
+                            <input type="text" class="form-control" id="ideaDescription"
+                                   placeholder="Enter Description">
+                        </div>
+                        <button class="btn btn-primary" ng-click="ok()">OK</button>
+                        <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </script>
+            <a href="" class="cw-spmenu-anchor-h3" ng-click="open()"><i class="fa fa-plus fa-2x"></i></a>
+        </div>
+
+    </span>
+    </div>
+    <div data-drop="true" ng-model="global.ideas"
+         ng-repeat="idea in global.ideas | filter:{board_column:99, board_row:99}"
+         jqyoui-droppable="{multiple: true, onDrop : 'controller.dropCallback(99,99)'}">
+        <div ng-show="global.user.is_admin">
+            <div editable-text="idea.title"
+                 id="{{idea.title}}" ng-model="global.ideas" data-drag="true"
+                 data-jqyoui-options="{revert: 'invalid'}"
+                 jqyoui-draggable="{index:{{$index}},  onStart : 'dragStartCallback(idea)'}">
+                <h5>{{idea.title}}</h5>
+            </div>
+        </div>
+        <div ng-hide="global.user.is_admin">
+            <div ng-repeat="idea in global.ideas | filter:{board_column: 99, board_row: 99}" ng-model="global.ideas">
+                <h5>{{idea.title}}</h5>
+            </div>
+        </div>
+    </div>
+
+    <div class="cw-spmenu-entry-div">
+        <h3>Tip of the day</h3>
     <span>
       <a href="" class="cw-spmenu-anchor-h3"><i class="fa fa-plus fa-2x"></i></a>
     </span>
-  </div>
-  <div>
-    <a href="#">Idea 1</a>
-  </div>
-  <a href="#">Idea 2</a>
-  <a href="#">Idea 3</a>
-  <a href="#">Idea 4</a>
-  <a href="#">Idea 5</a>
-  <a href="#">Idea 6</a>
-  <div class="cw-spmenu-entry-div">
-    <h3>Tip of the day</h3>
+    </div>
+    <div>
+        <p>check out grunt</p>
+    </div>
+    <div class="cw-spmenu-entry-div">
+        <h3>Tell Me About</h3>
     <span>
       <a href="" class="cw-spmenu-anchor-h3"><i class="fa fa-plus fa-2x"></i></a>
     </span>
-  </div>
-  <div>
-    <p>check out grunt</p>
-  </div>
-  <div class="cw-spmenu-entry-div">
-    <h3>Tell Me About</h3>
-    <span>
-      <a href="" class="cw-spmenu-anchor-h3"><i class="fa fa-plus fa-2x"></i></a>
-    </span>
-  </div>
+    </div>
 </nav>
