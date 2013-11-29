@@ -100,6 +100,7 @@ footer {
 .navbar {
   position: relative;
   border: 0px;
+  margin-bottom: 0px;
 }
 .dropdown-toggle {
   padding: 0 30px;
@@ -122,4 +123,11 @@ footer {
 .cw-dropdown-menu-anchor {
   background: white;
   color: #345472;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 100%;
+    padding: 0px;
+  }
 }

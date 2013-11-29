@@ -4,7 +4,6 @@
 }
 
 .content {
-  margin-top: 50px;
   width: 100%;
 }
 
@@ -91,6 +90,7 @@ footer p {
 .navbar {
   position: relative;
   border: 0px;
+  margin-bottom: 0px;
 }
 
 .dropdown-toggle {
@@ -117,4 +117,11 @@ footer p {
 .cw-dropdown-menu-anchor {
   background: white;
   color: #345472;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 100%;
+    padding: 0px;
+  }
 }

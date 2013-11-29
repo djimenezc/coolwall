@@ -9,6 +9,6 @@ block content
           ul
             li(data-ng-repeat='item in menu', data-ng-show='global.user', ui-route='/{{item.link}}', ng-class='{active: $uiRoute}')
               a(href='#!/{{item.link}}') {{item.title}} 
-        .col-xs-12.col-sm-9.boardContainer(data-ng-view)
+        .col-xs-12.col-sm-12.boardContainer(data-ng-view)
     script(type="text/javascript").
       window.user = !{user};
