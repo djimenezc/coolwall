@@ -72,7 +72,9 @@ footer {
   top:20px;
 }
 
-
+.editable-click, a.editable-click {
+  border-bottom: 0px;
+}
 .idea-list-item {
   cursor: hand;
   padding: 5px 10px;
@@ -130,4 +132,16 @@ footer {
     width: 100%;
     padding: 0px;
   }
+}
+.cw-spmenu h5 {
+  background: white;
+  color: black;
+  font-size: 13px;
+  margin: 0;
+  padding: 5px 0 5px 10px;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  font-family: 'Lato', Arial, sans-serif;
+  font-weight: bold;
+  line-height: 30px;
 }
