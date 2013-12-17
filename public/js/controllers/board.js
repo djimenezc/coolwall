@@ -1,4 +1,5 @@
 angular.module('coolwall.board').controller('BoardController', ['$scope', 'Global', 'IdeaService', function ($scope, Global, IdeaService, Ideas) {
+
     $scope.global = Global;
     $scope.global.ideas = [];
 
