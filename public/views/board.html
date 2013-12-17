@@ -4,16 +4,11 @@
 <div class="col-sm-10">
 <ng-path></ng-path>
 <div id="content-header">
-    <div class="row">
-        <div class="col-xs-6 col-sm-4"><h3>Cool</h3></div>
-        <div class="col-xs-6 col-sm-4"><h3>Uncool</h3></div>
-        <div class="col-xs-6 col-sm-4"><h3>SubZero</h3></div>
-    </div>
-</div>
-
 <div class="row">
+<div class="col-xs-6 col-sm-4">
+    <h3>Cool</h3>
 
-    <div class="col-xs-6 col-sm-4" data-drop="true" ng-model="global.ideas"
+    <div data-drop="true" ng-model="global.ideas"
          jqyoui-droppable="{multiple: true, onDrop : 'controller.dropCallback(0,0)' }">
         <div class="dropArea">
             <h4 class="text-success">Proven</h4>
@@ -36,55 +31,7 @@
             </div>
         </div>
     </div>
-    <div class="col-xs-6 col-sm-4" data-drop="true" ng-model="global.ideas"
-         jqyoui-droppable="{multiple: true, onDrop : 'controller.dropCallback(1,0)'}">
-        <div class="dropArea">
-            <h4 class="text-success">Proven</h4>
-
-            <div ng-show="global.user.is_admin">
-                <div class="idea-list-item" editable-text="idea.title" onaftersave="updateIdeaTitle(idea)"
-                     ng-repeat="idea in global.ideas | filter:{board_column:1, board_row:0}"
-                     id="{{idea.title}}" ng-model="global.ideas" data-drag="true"
-                     data-jqyoui-options="{revert: 'invalid'}"
-                     jqyoui-draggable="{index:{{$index}}, onStart : 'controller.dragStartCallback(idea)'}">
-                    <h5>{{idea.title}}</h5>
-                </div>
-            </div>
-            <div ng-hide="global.user.is_admin">
-                <div ng-repeat="idea in global.ideas | filter:{board_column:1, board_row:0}" ng-model="global.ideas">
-                    <h5>{{idea.title}}</h5>
-                </div>
-
-            </div>
-        </div>
-    </div>
-    <div class="col-xs-6 col-sm-4" data-drop="true" ng-model="global.ideas"
-         jqyoui-droppable="{multiple: true, onDrop : 'controller.dropCallback(2,0)'}">
-        <div class="dropArea">
-            <h4 class="text-success">Proven</h4>
-
-            <div ng-show="global.user.is_admin">
-                <div class="idea-list-item" editable-text="idea.title" onaftersave="updateIdeaTitle(idea)"
-                     ng-repeat="idea in global.ideas | filter:{board_column:2, board_row:0}"
-                     id="{{idea.title}}" ng-model="global.ideas" data-drag="true"
-                     data-jqyoui-options="{revert: 'invalid'}"
-                     jqyoui-draggable="{index:{{$index}}, onStart : 'controller.dragStartCallback(idea)'}">
-                    <h5>{{idea.title}}</h5>
-                </div>
-            </div>
-            <div ng-hide="global.user.is_admin">
-                <div ng-repeat="idea in global.ideas | filter:{board_column:2, board_row:0}"
-                     ng-model="global.ideas">
-                    <h5>{{idea.title}}</h5>
-                </div>
-
-            </div>
-        </div>
-
-    </div>
-</div>
-<div class="row">
-    <div class="col-xs-6 col-sm-4" data-drop="true" ng-model="global.ideas"
+    <div data-drop="true" ng-model="global.ideas"
          jqyoui-droppable="{multiple: true, onDrop : 'controller.dropCallback(0,1)'}">
         <div class="dropArea">
             <h4 class="text-success">Something in Between</h4>
@@ -108,57 +55,7 @@
             </div>
         </div>
     </div>
-    <div class="col-xs-6 col-sm-4" data-drop="true" ng-model="global.ideas"
-         jqyoui-droppable="{multiple: true, onDrop : 'controller.dropCallback(1,1)'}">
-        <div class="dropArea">
-            <h4 class="text-success">Something in Between</h4>
-
-            <div ng-show="global.user.is_admin">
-                <div class="idea-list-item" editable-text="idea.title"
-                     onaftersave="updateIdeaTitle(idea)"
-                     ng-repeat="idea in global.ideas | filter:{board_column:1, board_row:1}"
-                     id="{{idea.title}}" ng-model="global.ideas" data-drag="true"
-                     data-jqyoui-options="{revert: 'invalid'}"
-                     jqyoui-draggable="{index:{{$index}}, onStart : 'controller.dragStartCallback(idea)'}">
-                    <h5>{{idea.title}}</h5>
-                </div>
-            </div>
-            <div ng-hide="global.user.is_admin">
-                <div ng-repeat="idea in global.ideas | filter:{board_column:1, board_row:1}"
-                     ng-model="global.ideas">
-                    <h5>{{idea.title}}</h5>
-                </div>
-
-            </div>
-        </div>
-    </div>
-    <div class="col-xs-6 col-sm-4" data-drop="true" ng-model="global.ideas"
-         jqyoui-droppable="{multiple: true, onDrop : 'controller.dropCallback(2,1)'}">
-        <div class="dropArea">
-            <h4 class="text-success">Something in Between</h4>
-
-            <div ng-show="global.user.is_admin">
-                <div class="idea-list-item" editable-text="idea.title"
-                     onaftersave="updateIdeaTitle(idea)"
-                     ng-repeat="idea in global.ideas | filter:{board_column:2, board_row:1}"
-                     id="{{idea.title}}" ng-model="global.ideas" data-drag="true"
-                     data-jqyoui-options="{revert: 'invalid'}"
-                     jqyoui-draggable="{index:{{$index}}, onStart : 'controller.dragStartCallback(idea)'}">
-                    <h5>{{idea.title}}</h5>
-                </div>
-            </div>
-            <div ng-hide="global.user.is_admin">
-                <div ng-repeat="idea in global.ideas | filter:{board_column:2, board_row:1}"
-                     ng-model="global.ideas">
-                    <h5>{{idea.title}}</h5>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</div>
-<div class="row">
-    <div class="col-xs-6 col-sm-4" data-drop="true" ng-model="global.ideas"
+    <div data-drop="true" ng-model="global.ideas"
          jqyoui-droppable="{multiple: true, onDrop : 'controller.dropCallback(0,2)'}">
         <div class="dropArea">
             <h4 class="text-success">Unproven</h4>
@@ -182,7 +79,58 @@
             </div>
         </div>
     </div>
-    <div class="col-xs-6 col-sm-4" data-drop="true" ng-model="global.ideas"
+
+</div>
+<div class="col-xs-6 col-sm-4">
+    <h3>Uncool</h3>
+
+    <div data-drop="true" ng-model="global.ideas"
+         jqyoui-droppable="{multiple: true, onDrop : 'controller.dropCallback(1,0)'}">
+        <div class="dropArea">
+            <h4 class="text-success">Proven</h4>
+
+            <div ng-show="global.user.is_admin">
+                <div class="idea-list-item" editable-text="idea.title" onaftersave="updateIdeaTitle(idea)"
+                     ng-repeat="idea in global.ideas | filter:{board_column:1, board_row:0}"
+                     id="{{idea.title}}" ng-model="global.ideas" data-drag="true"
+                     data-jqyoui-options="{revert: 'invalid'}"
+                     jqyoui-draggable="{index:{{$index}}, onStart : 'controller.dragStartCallback(idea)'}">
+                    <h5>{{idea.title}}</h5>
+                </div>
+            </div>
+            <div ng-hide="global.user.is_admin">
+                <div ng-repeat="idea in global.ideas | filter:{board_column:1, board_row:0}" ng-model="global.ideas">
+                    <h5>{{idea.title}}</h5>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div data-drop="true" ng-model="global.ideas"
+         jqyoui-droppable="{multiple: true, onDrop : 'controller.dropCallback(1,1)'}">
+        <div class="dropArea">
+            <h4 class="text-success">Something in Between</h4>
+
+            <div ng-show="global.user.is_admin">
+                <div class="idea-list-item" editable-text="idea.title"
+                     onaftersave="updateIdeaTitle(idea)"
+                     ng-repeat="idea in global.ideas | filter:{board_column:1, board_row:1}"
+                     id="{{idea.title}}" ng-model="global.ideas" data-drag="true"
+                     data-jqyoui-options="{revert: 'invalid'}"
+                     jqyoui-draggable="{index:{{$index}}, onStart : 'controller.dragStartCallback(idea)'}">
+                    <h5>{{idea.title}}</h5>
+                </div>
+            </div>
+            <div ng-hide="global.user.is_admin">
+                <div ng-repeat="idea in global.ideas | filter:{board_column:1, board_row:1}"
+                     ng-model="global.ideas">
+                    <h5>{{idea.title}}</h5>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div data-drop="true" ng-model="global.ideas"
          jqyoui-droppable="{multiple: true, onDrop : 'controller.dropCallback(1,2)'}">
         <div class="dropArea">
             <h4 class="text-success">Unproven</h4>
@@ -206,7 +154,59 @@
             </div>
         </div>
     </div>
-    <div class="col-xs-6 col-sm-4" data-drop="true" ng-model="global.ideas"
+</div>
+<div class="col-xs-6 col-sm-4">
+    <h3>SubZero</h3>
+
+    <div data-drop="true" ng-model="global.ideas"
+         jqyoui-droppable="{multiple: true, onDrop : 'controller.dropCallback(2,0)'}">
+        <div class="dropArea">
+            <h4 class="text-success">Proven</h4>
+
+            <div ng-show="global.user.is_admin">
+                <div class="idea-list-item" editable-text="idea.title" onaftersave="updateIdeaTitle(idea)"
+                     ng-repeat="idea in global.ideas | filter:{board_column:2, board_row:0}"
+                     id="{{idea.title}}" ng-model="global.ideas" data-drag="true"
+                     data-jqyoui-options="{revert: 'invalid'}"
+                     jqyoui-draggable="{index:{{$index}}, onStart : 'controller.dragStartCallback(idea)'}">
+                    <h5>{{idea.title}}</h5>
+                </div>
+            </div>
+            <div ng-hide="global.user.is_admin">
+                <div ng-repeat="idea in global.ideas | filter:{board_column:2, board_row:0}"
+                     ng-model="global.ideas">
+                    <h5>{{idea.title}}</h5>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div data-drop="true" ng-model="global.ideas"
+         jqyoui-droppable="{multiple: true, onDrop : 'controller.dropCallback(2,1)'}">
+        <div class="dropArea">
+            <h4 class="text-success">Something in Between</h4>
+
+            <div ng-show="global.user.is_admin">
+                <div class="idea-list-item" editable-text="idea.title"
+                     onaftersave="updateIdeaTitle(idea)"
+                     ng-repeat="idea in global.ideas | filter:{board_column:2, board_row:1}"
+                     id="{{idea.title}}" ng-model="global.ideas" data-drag="true"
+                     data-jqyoui-options="{revert: 'invalid'}"
+                     jqyoui-draggable="{index:{{$index}}, onStart : 'controller.dragStartCallback(idea)'}">
+                    <h5>{{idea.title}}</h5>
+                </div>
+            </div>
+            <div ng-hide="global.user.is_admin">
+                <div ng-repeat="idea in global.ideas | filter:{board_column:2, board_row:1}"
+                     ng-model="global.ideas">
+                    <h5>{{idea.title}}</h5>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div data-drop="true" ng-model="global.ideas"
          jqyoui-droppable="{multiple: true, onDrop : 'controller.dropCallback(2,2)'}">
         <div class="dropArea">
             <h4 class="text-success">Unproven</h4>
@@ -230,6 +230,8 @@
             </div>
         </div>
     </div>
+</div>
+</div>
 </div>
 </div>
 <div class="col-sm-2 trash" data-drop="true" ng-model="global.ideas"
