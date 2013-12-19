@@ -50,7 +50,7 @@ footer p {
 }
 
 .dropArea {
-  min-height: 120px;
+  min-height: 70px;
 }
 
 .trash {
@@ -62,9 +62,12 @@ footer p {
 }
 
 .idea-list-item {
-  cursor: hand;
+  cursor: pointer;
   padding: 5px 10px;
   border: 0;
+  width: 80px;
+  margin: 2px 2px 2px 2px;
+  float: left;
 }
 
 .idea-list-item:active {
@@ -140,4 +143,8 @@ footer p {
   font-family: 'Lato', Arial, sans-serif;
   font-weight: bold;
   line-height: 30px;
+}
+
+.accordion.horizontal div.content {
+    height: 280px;
 }
