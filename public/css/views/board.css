@@ -86,7 +86,7 @@
     float:left;
 }
 .horizontal ul li .content {
-    height:300px;
+    /*height:300px;*/
     padding:0;
     display:inline-block; /* Makes its work in FF */
     visibility:hidden; /* Chrome bug cant show width < 1px for some reason so need to toggle visibility */
